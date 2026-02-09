@@ -1,0 +1,141 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/globals.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Donta' - Full-Stack Engineer & Design Engineer. Building software that makes an impact." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#F5F0E8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- View Transitions -->
+    <ClientRouter />
+    
+    <!-- Inline critical CSS for faster LCP -->
+    <style>
+      /* Prevent FOUC */
+      html { visibility: visible; opacity: 1; }
+    </style>
+  </head>
+  <body class="min-h-screen bg-brutal-cream">
+    <!-- Grain Overlay for texture -->
+    <div class="grain-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-brutal-cream border-b-3 border-brutal-black">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-2 group">
+            <div class="w-10 h-10 bg-brutal-black flex items-center justify-center transition-transform group-hover:rotate-12">
+              <span class="text-brutal-white font-display font-bold text-lg">D</span>
+            </div>
+            <span class="font-display font-bold text-lg hidden sm:block">DONTA'</span>
+          </a>
+          
+          <!-- Nav Links -->
+          <div class="flex items-center gap-1">
+            <a href="/#work" class="px-4 py-2 font-mono text-sm uppercase tracking-wider hover:bg-brutal-black hover:text-brutal-white transition-colors">
+              Work
+            </a>
+            <a href="/garden" class="px-4 py-2 font-mono text-sm uppercase tracking-wider hover:bg-brutal-black hover:text-brutal-white transition-colors">
+              Garden
+            </a>
+            <a href="/#about" class="px-4 py-2 font-mono text-sm uppercase tracking-wider hover:bg-brutal-black hover:text-brutal-white transition-colors">
+              About
+            </a>
+            <a
+              href="mailto:donta.ruffin@gmail.com"
+              class="ml-2 btn-brutal-primary text-xs"
+            >
+              Let's Talk
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="pt-16">
+      <slot />
+    </main>
+    
+    <!-- Footer -->
+    <footer class="border-t-3 border-brutal-black bg-brutal-black text-brutal-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Brand -->
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-10 h-10 bg-brutal-orange flex items-center justify-center">
+                <span class="text-brutal-white font-display font-bold text-lg">D</span>
+              </div>
+              <span class="font-display font-bold text-xl">DONTA'</span>
+            </div>
+            <p class="font-mono text-sm text-gray-400 leading-relaxed">
+              Full-stack engineer building impactful software.<br/>
+              Currently crafting Solon AI.
+            </p>
+          </div>
+          
+          <!-- Links -->
+          <div>
+            <h4 class="font-display font-bold text-sm uppercase tracking-wider mb-4">Navigate</h4>
+            <ul class="space-y-2 font-mono text-sm">
+              <li><a href="/#work" class="text-gray-400 hover:text-brutal-orange transition-colors">Work</a></li>
+              <li><a href="/garden" class="text-gray-400 hover:text-brutal-orange transition-colors">Digital Garden</a></li>
+              <li><a href="/#about" class="text-gray-400 hover:text-brutal-orange transition-colors">About</a></li>
+            </ul>
+          </div>
+          
+          <!-- Social -->
+          <div>
+            <h4 class="font-display font-bold text-sm uppercase tracking-wider mb-4">Connect</h4>
+            <ul class="space-y-2 font-mono text-sm">
+              <li><a href="https://github.com/donta" class="text-gray-400 hover:text-brutal-orange transition-colors">GitHub</a></li>
+              <li><a href="https://linkedin.com/in/donta" class="text-gray-400 hover:text-brutal-orange transition-colors">LinkedIn</a></li>
+              <li><a href="https://twitter.com/donta" class="text-gray-400 hover:text-brutal-orange transition-colors">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p class="font-mono text-xs text-gray-500">
+            © 2026 Donta'. Crafted with intention.
+          </p>
+          <p class="font-mono text-xs text-gray-500">
+            Lancaster, PA // {new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

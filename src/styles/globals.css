@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Neo-Brutalist Core Tokens */
+    --color-bg: #F5F0E8;
+    --color-fg: #000000;
+    --color-accent: #FF6B35;
+    --color-accent-2: #7C3AED;
+    --color-accent-3: #06B6D4;
+    --color-cream: #F5F0E8;
+    
+    /* Structural Tokens */
+    --border-width: 3px;
+    --shadow-x: 4px;
+    --shadow-y: 4px;
+    --radius: 0px;
+    
+    /* Typography Scale */
+    --font-display: 'Space Mono', monospace;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'Instrument Sans', sans-serif;
+  }
+  
+  .dark {
+    --color-bg: #1a1a1a;
+    --color-fg: #ffffff;
+    --color-cream: #2a2a2a;
+  }
+
+  * {
+    border-color: var(--color-fg);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Dark mode specific overrides */
+  .dark body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .dark .bg-brutal-cream {
+    background-color: #2a2a2a;
+  }
+  
+  .dark .bg-brutal-white {
+    background-color: #1a1a1a;
+  }
+  
+  .dark .border-brutal-black {
+    border-color: #ffffff;
+  }
+  
+  .dark .text-gray-600,
+  .dark .text-gray-700 {
+    color: #a0a0a0;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: white;
+  }
+  
+  /* View Transitions */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.3s;
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+  }
+  
+  @keyframes fade-out {
+    to { opacity: 0; }
+  }
+  
+  @keyframes slide-from-right {
+    from { transform: translateX(30px); }
+  }
+  
+  @keyframes slide-to-left {
+    to { transform: translateX(-30px); }
+  }
+  
+  ::view-transition-old(root) {
+    animation: 0.3s cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
+               0.3s cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+  }
+  
+  ::view-transition-new(root) {
+    animation: 0.3s cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
+               0.3s cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+  }
+}
+
+@layer components {
+  /* Neo-Brutalist Button */
+  .btn-brutal {
+    @apply relative inline-flex items-center justify-center px-6 py-3;
+    @apply font-mono font-bold text-sm uppercase tracking-wider;
+    @apply border-3 border-brutal-black bg-brutal-white;
+    @apply shadow-brutal transition-all duration-150 ease-out;
+    @apply hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover;
+    @apply active:translate-x-[4px] active:translate-y-[4px];
+  }
+
+  .btn-brutal-primary {
+    @apply btn-brutal bg-brutal-orange text-white;
+  }
+
+  .btn-brutal-dark {
+    @apply btn-brutal bg-brutal-black text-white;
+  }
+
+  /* Neo-Brutalist Card */
+  .card-brutal {
+    @apply relative bg-brutal-white border-3 border-brutal-black;
+    @apply shadow-brutal transition-all duration-150;
+    @apply hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover;
+  }
+
+  /* Neo-Brutalist Input */
+  .input-brutal {
+    @apply w-full px-4 py-3 font-mono text-sm;
+    @apply border-3 border-brutal-black bg-brutal-white;
+    @apply focus:outline-none focus:ring-0 focus:shadow-brutal-inset;
+    @apply placeholder:text-gray-500;
+  }
+
+  /* Marquee Animation */
+  .marquee-container {
+    @apply flex overflow-hidden whitespace-nowrap;
+  }
+
+  .marquee-content {
+    @apply flex animate-marquee;
+  }
+
+  /* Grain Overlay */
+  .grain-overlay {
+    @apply fixed inset-0 pointer-events-none z-50 opacity-[0.03];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    animation: grain 8s steps(10) infinite;
+  }
+
+  /* Section Divider */
+  .divider-brutal {
+    @apply w-full h-[3px] bg-brutal-black;
+  }
+
+  /* Tag/Badge */
+  .tag-brutal {
+    @apply inline-flex items-center px-3 py-1;
+    @apply font-mono text-xs uppercase tracking-wider;
+    @apply border-2 border-brutal-black bg-brutal-white;
+  }
+
+  /* Link Underline Effect */
+  .link-brutal {
+    @apply relative inline-block;
+    @apply after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px];
+    @apply after:bg-brutal-orange after:origin-left after:scale-x-0;
+    @apply after:transition-transform after:duration-200;
+    @apply hover:after:scale-x-100;
+  }
+}
+
+@layer utilities {
+  /* Brutalist Text Styles */
+  .text-brutal-headline {
+    @apply font-display font-bold tracking-tight leading-none;
+  }
+
+  .text-brutal-mono {
+    @apply font-mono font-medium tracking-tight;
+  }
+
+  /* Strikethrough Decoration */
+  .strike-through {
+    @apply relative;
+  }
+  
+  .strike-through::after {
+    content: '';
+    @apply absolute left-0 top-1/2 w-full h-[3px] bg-brutal-black -translate-y-1/2;
+  }
+
+  /* Rotation Utilities */
+  .rotate-brutal-1 {
+    transform: rotate(-1deg);
+  }
+  
+  .rotate-brutal-2 {
+    transform: rotate(2deg);
+  }
+
+  .rotate-brutal-neg-2 {
+    transform: rotate(-2deg);
+  }
+
+  /* Grid Pattern Background */
+  .bg-grid {
+    background-image: 
+      linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Dot Pattern Background */
+  .bg-dots {
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}

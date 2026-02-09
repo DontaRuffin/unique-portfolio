@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import KnowledgeGraph from '../../components/KnowledgeGraph';
+---
+
+<Layout title="Digital Garden | Donta'" description="A collection of interconnected notes, ideas, and learnings. Explore my digital garden.">
+  <!-- Hero -->
+  <section class="relative py-24 bg-brutal-cream border-b-3 border-brutal-black">
+    <div class="absolute inset-0 bg-dots opacity-10"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="font-mono text-sm uppercase tracking-wider text-brutal-violet mb-4 block">// Digital Garden</span>
+        <h1 class="text-brutal-headline text-5xl sm:text-6xl md:text-7xl mb-6">
+          A Map of<br/>
+          <span class="text-brutal-violet">My Mind</span>
+        </h1>
+        <p class="font-body text-xl text-gray-700 leading-relaxed">
+          This is my digital garden — a collection of interconnected notes, ideas, and learnings. 
+          Unlike a blog, these notes are cultivated over time, connected through wikilinks, 
+          and organized by topic rather than date.
+        </p>
+      </div>
+      
+      <!-- Legend -->
+      <div class="mt-12 flex flex-wrap gap-4">
+        <div class="flex items-center gap-2 px-4 py-2 border-3 border-brutal-black bg-brutal-white">
+          <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+          <span class="font-mono text-xs uppercase tracking-wider">Evergreen</span>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2 border-3 border-brutal-black bg-brutal-white">
+          <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+          <span class="font-mono text-xs uppercase tracking-wider">Budding</span>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2 border-3 border-brutal-black bg-brutal-white">
+          <span class="w-3 h-3 bg-gray-400 rounded-full"></span>
+          <span class="font-mono text-xs uppercase tracking-wider">Seedling</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Graph View -->
+  <section class="py-16 bg-brutal-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="font-display font-bold text-2xl">Graph View</h2>
+        <div class="flex gap-2">
+          <button class="px-4 py-2 font-mono text-xs uppercase tracking-wider border-3 border-brutal-black bg-brutal-black text-brutal-white">
+            Graph
+          </button>
+          <button class="px-4 py-2 font-mono text-xs uppercase tracking-wider border-3 border-brutal-black bg-brutal-white hover:bg-brutal-cream transition-colors">
+            List
+          </button>
+        </div>
+      </div>
+      <KnowledgeGraph client:visible />
+    </div>
+  </section>
+
+  <!-- Notes Grid -->
+  <section class="py-16 bg-brutal-cream border-t-3 border-brutal-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Search -->
+      <div class="mb-12">
+        <div class="relative max-w-md">
+          <input 
+            type="text" 
+            placeholder="Search notes..." 
+            class="input-brutal pl-12"
+          />
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Topics -->
+      <div class="mb-12">
+        <h3 class="font-display font-bold text-lg mb-4">Topics</h3>
+        <div class="flex flex-wrap gap-2">
+          {['All', 'Engineering', 'Design', 'AI', 'Business', 'Learning', 'Tools'].map((topic, i) => (
+            <button class={`px-4 py-2 font-mono text-xs uppercase tracking-wider border-3 border-brutal-black transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none ${i === 0 ? 'bg-brutal-black text-brutal-white shadow-none' : 'bg-brutal-white shadow-brutal-sm'}`}>
+              {topic}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Notes List -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Sample notes - would be generated from content collection -->
+        {[
+          {
+            title: 'Design Engineering',
+            excerpt: 'The convergence of design and engineering into a unified discipline. How to think about building interfaces as an engineer-designer hybrid.',
+            status: 'evergreen',
+            tags: ['design', 'engineering'],
+            updated: '2025-12-15'
+          },
+          {
+            title: 'WebGPU Deep Dive',
+            excerpt: 'Exploring the next generation of web graphics APIs. Compute shaders, TSL, and the future of creative coding on the web.',
+            status: 'budding',
+            tags: ['graphics', 'engineering'],
+            updated: '2025-12-20'
+          },
+          {
+            title: 'Building in Public',
+            excerpt: 'Lessons learned from sharing my journey with Solon AI. The psychology of transparency and community building.',
+            status: 'evergreen',
+            tags: ['business', 'learning'],
+            updated: '2025-12-22'
+          },
+          {
+            title: 'Neo-Brutalism in UI',
+            excerpt: 'Raw, honest interfaces that reject the polished sameness of modern design. Hard shadows, sharp edges, and structural visibility.',
+            status: 'budding',
+            tags: ['design', 'ui'],
+            updated: '2025-12-18'
+          },
+          {
+            title: 'LLM Prompt Engineering',
+            excerpt: 'Techniques for getting the most out of large language models. Context windows, chain-of-thought, and structured outputs.',
+            status: 'seedling',
+            tags: ['ai', 'engineering'],
+            updated: '2025-12-25'
+          },
+          {
+            title: 'Astro Islands Architecture',
+            excerpt: 'Why I chose Astro for this site. Zero-JS by default, partial hydration, and the best of both MPA and SPA worlds.',
+            status: 'evergreen',
+            tags: ['engineering', 'tools'],
+            updated: '2025-12-10'
+          },
+        ].map((note, index) => (
+          <a 
+            href={`/garden/${note.title.toLowerCase().replace(/\s+/g, '-')}`}
+            class="group block border-3 border-brutal-black bg-brutal-white shadow-brutal transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-hover"
+          >
+            <div class="p-6">
+              <!-- Status indicator -->
+              <div class="flex items-center gap-2 mb-3">
+                <span class={`w-2 h-2 rounded-full ${
+                  note.status === 'evergreen' ? 'bg-green-500' :
+                  note.status === 'budding' ? 'bg-yellow-500' : 'bg-gray-400'
+                }`}></span>
+                <span class="font-mono text-[10px] uppercase tracking-wider text-gray-500">{note.status}</span>
+              </div>
+              
+              <!-- Title -->
+              <h3 class="font-display font-bold text-lg mb-2 group-hover:text-brutal-violet transition-colors">
+                {note.title}
+              </h3>
+              
+              <!-- Excerpt -->
+              <p class="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3">
+                {note.excerpt}
+              </p>
+              
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-1 mb-3">
+                {note.tags.map((tag) => (
+                  <span class="px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider border border-brutal-black bg-brutal-cream">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              <!-- Date -->
+              <p class="font-mono text-[10px] text-gray-500 uppercase tracking-wider">
+                Updated {new Date(note.updated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

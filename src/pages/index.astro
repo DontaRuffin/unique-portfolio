@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WebGPULiquid from '../components/WebGPULiquid';
+import ProjectCard from '../components/ProjectCard';
+import { Marquee, MarqueeItem } from '../components/Marquee';
+import KnowledgeGraph from '../components/KnowledgeGraph';
+---
+
+<Layout title="Donta' | Full-Stack Engineer & Design Engineer">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brutal-cream">
+    <!-- WebGPU Liquid Metal Background -->
+    <WebGPULiquid client:load colorScheme="brutalist" showGrid={true} showParticles={true} />
+    
+    <!-- Grid Pattern -->
+    <div class="absolute inset-0 bg-grid opacity-30"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="max-w-4xl">
+        <!-- Status Badge -->
+        <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 border-3 border-brutal-black bg-brutal-white shadow-brutal-sm">
+          <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          <span class="font-mono text-xs uppercase tracking-wider">Available for Projects</span>
+        </div>
+        
+        <!-- Headline -->
+        <h1 class="text-brutal-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6">
+          <span class="block">I Build</span>
+          <span class="block text-brutal-orange">Software</span>
+          <span class="block">That Makes</span>
+          <span class="block relative inline-block">
+            <span class="relative z-10">Impact</span>
+            <span class="absolute bottom-2 left-0 w-full h-4 bg-brutal-violet -z-0 -rotate-1"></span>
+          </span>
+        </h1>
+        
+        <!-- Subtitle -->
+        <p class="font-body text-lg sm:text-xl text-gray-700 max-w-2xl mb-10 leading-relaxed">
+          Full-stack engineer with a graphic design background, building products that 
+          solve real problems. Currently crafting <span class="font-bold text-brutal-orange">Solon AI</span> — 
+          an AI-powered code review tool.
+        </p>
+        
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4">
+          <a href="#work" class="btn-brutal-primary">
+            View My Work
+          </a>
+          <a href="/garden" class="btn-brutal">
+            Explore My Mind →
+          </a>
+        </div>
+        
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 mt-16 max-w-md">
+          <div class="text-center p-4 border-3 border-brutal-black bg-brutal-white">
+            <span class="block font-display font-bold text-3xl text-brutal-orange">4+</span>
+            <span class="font-mono text-xs uppercase tracking-wider text-gray-600">Years Exp</span>
+          </div>
+          <div class="text-center p-4 border-3 border-brutal-black bg-brutal-white">
+            <span class="block font-display font-bold text-3xl text-brutal-violet">100+</span>
+            <span class="font-mono text-xs uppercase tracking-wider text-gray-600">Users</span>
+          </div>
+          <div class="text-center p-4 border-3 border-brutal-black bg-brutal-white">
+            <span class="block font-display font-bold text-3xl text-brutal-cyan">∞</span>
+            <span class="font-mono text-xs uppercase tracking-wider text-gray-600">Curiosity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+      <span class="font-mono text-xs uppercase tracking-wider">Scroll</span>
+      <div class="w-6 h-10 border-3 border-brutal-black rounded-full flex justify-center pt-2">
+        <div class="w-1.5 h-3 bg-brutal-black rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <Marquee client:load>
+    <MarqueeItem>Full-Stack Development</MarqueeItem>
+    <MarqueeItem>AI Integration</MarqueeItem>
+    <MarqueeItem>Design Engineering</MarqueeItem>
+    <MarqueeItem>Product Strategy</MarqueeItem>
+    <MarqueeItem>React & TypeScript</MarqueeItem>
+    <MarqueeItem>WebGPU & Graphics</MarqueeItem>
+  </Marquee>
+
+  <!-- Work Section -->
+  <section id="work" class="py-24 bg-brutal-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-16">
+        <div>
+          <span class="font-mono text-sm uppercase tracking-wider text-brutal-orange mb-2 block">// Featured Work</span>
+          <h2 class="text-brutal-headline text-4xl sm:text-5xl">
+            Selected<br/>Projects
+          </h2>
+        </div>
+        <p class="font-body text-gray-600 max-w-md">
+          A curated selection of projects that showcase my approach to building 
+          impactful software with attention to craft.
+        </p>
+      </div>
+      
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ProjectCard
+          client:visible
+          title="Solon AI"
+          description="AI-powered code review GitHub Action that provides intelligent, context-aware feedback on pull requests. Supports JavaScript, TypeScript, Python, and Rust."
+          tags={['AI', 'GitHub Actions', 'TypeScript', 'LLM']}
+          image="/projects/solon-ai.png"
+          liveUrl="https://github.com/marketplace/actions/solon-ai"
+          githubUrl="https://github.com/donta/solon-ai"
+          featured={true}
+          index={0}
+        />
+        
+        <ProjectCard
+          client:visible
+          title="Digital Garden"
+          description="This very website — a Neo-Brutalist portfolio with interactive 3D elements, force-directed knowledge graph, and Obsidian-powered content."
+          tags={['Astro', 'Three.js', 'WebGPU', 'Design']}
+          image="/projects/digital-garden.png"
+          liveUrl="/"
+          githubUrl="https://github.com/donta/garden"
+          index={1}
+        />
+        
+        <ProjectCard
+          client:visible
+          title="Cannabis POS"
+          description="Point-of-sale system for Washington State dispensaries with tax automation, inventory management, and compliance reporting."
+          tags={['React', 'Node.js', 'PostgreSQL', 'AWS']}
+          image="/projects/cannabis-pos.png"
+          index={2}
+        />
+        
+        <ProjectCard
+          client:visible
+          title="BarQode"
+          description="Venue-based social payment platform enabling seamless connections and transactions in nightlife settings."
+          tags={['React Native', 'Stripe', 'Real-time']}
+          image="/projects/barqode.png"
+          index={3}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Graph Section -->
+  <section class="py-24 bg-brutal-white border-y-3 border-brutal-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="font-mono text-sm uppercase tracking-wider text-brutal-violet mb-2 block">// Digital Garden</span>
+          <h2 class="text-brutal-headline text-4xl sm:text-5xl">
+            Map of<br/>My Mind
+          </h2>
+        </div>
+        <p class="font-body text-gray-600 max-w-md">
+          An interconnected knowledge graph of ideas, learnings, and explorations. 
+          Drag nodes to explore the topology.
+        </p>
+      </div>
+      
+      <!-- Graph -->
+      <KnowledgeGraph client:visible />
+      
+      <!-- CTA -->
+      <div class="mt-8 text-center">
+        <a href="/garden" class="btn-brutal">
+          Explore Full Garden →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-brutal-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Image -->
+        <div class="relative">
+          <div class="aspect-square bg-brutal-black border-3 border-brutal-black shadow-brutal-lg overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-brutal-orange via-brutal-violet to-brutal-cyan opacity-80"></div>
+          </div>
+          <!-- Floating elements -->
+          <div class="absolute -top-4 -right-4 px-4 py-2 bg-brutal-orange text-white font-mono text-sm uppercase tracking-wider border-3 border-brutal-black shadow-brutal rotate-brutal-2">
+            Lancaster, PA
+          </div>
+          <div class="absolute -bottom-4 -left-4 px-4 py-2 bg-brutal-violet text-white font-mono text-sm uppercase tracking-wider border-3 border-brutal-black shadow-brutal rotate-brutal-neg-2">
+            Est. 2020
+          </div>
+        </div>
+        
+        <!-- Content -->
+        <div>
+          <span class="font-mono text-sm uppercase tracking-wider text-brutal-cyan mb-2 block">// About</span>
+          <h2 class="text-brutal-headline text-4xl sm:text-5xl mb-6">
+            Donta'
+          </h2>
+          
+          <div class="space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              I'm a <span class="font-bold">solo entrepreneur</span> and <span class="font-bold">full-stack engineer</span> with 
+              a graphic design background. I believe the best software comes from understanding 
+              both the user's needs and the technical possibilities.
+            </p>
+            <p>
+              Currently, I'm focused on <span class="text-brutal-orange font-bold">Solon AI</span> — 
+              an AI-powered code review tool that helps development teams ship better code faster. 
+              My goal is to reach $5K MRR and build software that creates real value.
+            </p>
+            <p>
+              When I'm not coding, you'll find me exploring new technologies, tending to my 
+              digital garden, or thinking about the intersection of design and engineering.
+            </p>
+          </div>
+          
+          <!-- Skills -->
+          <div class="mt-8">
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-4">Core Stack</h3>
+            <div class="flex flex-wrap gap-2">
+              {['React', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'AWS', 'AI/LLMs', 'Three.js'].map((skill) => (
+                <span class="tag-brutal">{skill}</span>
+              ))}
+            </div>
+          </div>
+          
+          <!-- CTA -->
+          <div class="mt-8 flex gap-4">
+            <a href="mailto:donta.ruffin@gmail.com" class="btn-brutal-primary">
+              Get In Touch
+            </a>
+            <a href="/resume.pdf" class="btn-brutal">
+              Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-brutal-black text-brutal-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-brutal-headline text-4xl sm:text-5xl md:text-6xl mb-6">
+        Let's Build<br/>
+        <span class="text-brutal-orange">Something Great</span>
+      </h2>
+      <p class="font-body text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+        Whether you have a project in mind, want to collaborate, or just want to chat about 
+        technology and design — I'd love to hear from you.
+      </p>
+      <a href="mailto:donta.ruffin@gmail.com" class="btn-brutal-primary text-lg px-10 py-4">
+        Start a Conversation
+      </a>
+    </div>
+  </section>
+</Layout>
