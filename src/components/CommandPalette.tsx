@@ -112,7 +112,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
       label: 'LinkedIn',
       description: 'Connect with me',
       icon: <Linkedin className="w-4 h-4" />,
-      action: () => { window.open('https://www.dontaruffin.com/in/dontaruffin', '_blank'); onClose(); },
+      action: () => { window.open('https://www.linkedin.com/in/dontaruffin', '_blank'); onClose(); },
       category: 'social',
     },
     // Notes (sample - would be dynamic)
