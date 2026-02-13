@@ -1,16 +1,15 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Search, 
-  Home, 
-  FolderOpen, 
-  User, 
-  Mail, 
-  Moon, 
-  Sun, 
-  Github, 
-  Linkedin, 
-  Twitter,
+import {
+  Search,
+  Home,
+  FolderOpen,
+  User,
+  Mail,
+  Moon,
+  Sun,
+  Github,
+  Linkedin,
   FileText,
   Sparkles,
   ArrowRight
@@ -105,7 +104,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
       label: 'GitHub',
       description: 'View my code',
       icon: <Github className="w-4 h-4" />,
-      action: () => { window.open('https://github.com/donta', '_blank'); onClose(); },
+      action: () => { window.open('https://github.com/dontaruffin', '_blank'); onClose(); },
       category: 'social',
     },
     {
@@ -113,15 +112,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
       label: 'LinkedIn',
       description: 'Connect with me',
       icon: <Linkedin className="w-4 h-4" />,
-      action: () => { window.open('https://linkedin.com/in/donta', '_blank'); onClose(); },
-      category: 'social',
-    },
-    {
-      id: 'twitter',
-      label: 'Twitter',
-      description: 'Follow me',
-      icon: <Twitter className="w-4 h-4" />,
-      action: () => { window.open('https://twitter.com/donta', '_blank'); onClose(); },
+      action: () => { window.open('https://www.dontaruffin.com/in/dontaruffin', '_blank'); onClose(); },
       category: 'social',
     },
     // Notes (sample - would be dynamic)
