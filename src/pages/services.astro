@@ -1,0 +1,499 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const contactEmail = 'donta.ruffin@gmail.com';
+const startProjectHref = `mailto:${contactEmail}?subject=${encodeURIComponent("Let's start a project")}`;
+const availabilityHref = `mailto:${contactEmail}?subject=${encodeURIComponent('Availability question')}`;
+const askQuestionHref = `mailto:${contactEmail}?subject=${encodeURIComponent('Quick question about your services')}`;
+const quickSprintHref = `mailto:${contactEmail}?subject=${encodeURIComponent('Quick Sprint inquiry')}`;
+const websiteBuildHref = `mailto:${contactEmail}?subject=${encodeURIComponent('Website Build intro call')}`;
+const researchBuildHref = `mailto:${contactEmail}?subject=${encodeURIComponent('Research + Build engagement')}`;
+
+const overviewServices = [
+  {
+    name: 'Quick Sprint',
+    summary: 'Fast, focused help for fixes, improvements, and small builds.',
+    accent: 'text-brutal-orange',
+    bg: 'bg-brutal-orange',
+    anchor: '#quick-sprint',
+  },
+  {
+    name: 'Website Build',
+    summary: 'A clean, modern, 3–5 page site that actually supports your goals.',
+    accent: 'text-brutal-violet',
+    bg: 'bg-brutal-violet',
+    anchor: '#website-build',
+  },
+  {
+    name: 'Research + Build',
+    summary: 'Strategy, research, and a concrete build or prototype when you’re not yet sure what to make.',
+    accent: 'text-brutal-cyan',
+    bg: 'bg-brutal-cyan',
+    anchor: '#research-build',
+  },
+];
+
+const howItWorksSteps = [
+  {
+    title: 'Intro + fit check',
+    body: 'Share a bit about your product, timeline, and goals. If we’re a good fit, we pick the smallest useful scope that moves you forward.',
+  },
+  {
+    title: 'Scope + proposal',
+    body: 'I confirm a fixed or range-based price, outline the deliverables and timeline, and we agree on the starting point. No surprise scope creep.',
+  },
+  {
+    title: 'Build phase (human-led, AI-assisted)',
+    body: 'I design, build, and/or research using a mix of my own experience and AI workflows to move faster. You get async updates and chances to give feedback without endless meetings.',
+  },
+  {
+    title: 'Review + refine',
+    body: 'We review the work together, make refinements, and test against your goals. I translate any “under the hood” technical decisions into plain language.',
+  },
+  {
+    title: 'Launch + handoff',
+    body: 'Once you’re happy, we ship. You get any necessary documentation, Loom walkthroughs, and a clear view of what to do next.',
+  },
+];
+
+const whyBullets = [
+  'Full-stack + UX mindset — I think in terms of flows and systems, not just pages.',
+  'Async-friendly — Clear written updates and Looms so we can make progress without constant calls.',
+  'Focused on outcomes — The point isn’t a pretty site; it’s a site that supports your product and helps your users.',
+];
+
+const faqs = [
+  {
+    q: 'Do you only work with local clients?',
+    a: 'No. Most of my work is remote. I’m based in Pennsylvania but happy to work with clients in different time zones as long as we can align on communication and timelines.',
+  },
+  {
+    q: 'What stacks do you usually work with?',
+    a: 'I’m comfortable across modern web stacks (for example, React/Next, TypeScript, Tailwind, and common backend options), and I can usually work within what you already have if it’s reasonable. If we’re starting from scratch, I’ll recommend a stack that fits your goals and maintenance capacity.',
+  },
+  {
+    q: 'How soon can we start?',
+    a: 'Availability changes throughout the year, but I typically keep room for a small number of focused projects. Reach out with your timeline and I’ll let you know what’s realistic.',
+  },
+];
+
+const pageDescription =
+  "Work with Donta' Ruffin — a full-stack developer and designer who uses AI-assisted workflows to help small teams and solo founders ship better websites and product workflows. Quick Sprints, Website Builds, and Research + Build engagements.";
+---
+
+<Layout title="Services | Donta'" description={pageDescription}>
+  <!-- Hero -->
+  <section class="relative py-24 bg-brutal-cream border-b-3 border-brutal-black overflow-hidden">
+    <div class="absolute inset-0 bg-grid opacity-30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <span class="font-mono text-sm uppercase tracking-wider text-brutal-orange mb-4 block">// Services</span>
+        <h1 class="text-brutal-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+          Ship better websites and<br/>
+          product workflows<br/>
+          <span class="relative inline-block">
+            <span class="relative z-10">without hiring an agency.</span>
+            <span class="absolute bottom-2 left-0 w-full h-4 bg-brutal-orange -z-0 -rotate-1"></span>
+          </span>
+        </h1>
+        <p class="font-body text-lg sm:text-xl text-gray-700 max-w-2xl mb-10 leading-relaxed">
+          I'm <span class="font-bold">Donta' Ruffin</span> — a full-stack developer and designer who works
+          with AI-assisted workflows to help small teams and solo founders ship faster, with less chaos
+          and more craft.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href={startProjectHref} class="btn-brutal-primary">
+            Start a project
+          </a>
+          <a href={availabilityHref} class="btn-brutal">
+            Ask about availability
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who I work with -->
+  <section class="py-24 bg-brutal-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        <div class="lg:col-span-1">
+          <span class="font-mono text-sm uppercase tracking-wider text-brutal-violet mb-2 block">// Audience</span>
+          <h2 class="text-brutal-headline text-4xl sm:text-5xl">
+            Who I<br/>work with
+          </h2>
+        </div>
+        <div class="lg:col-span-2 space-y-4 text-gray-700 leading-relaxed font-body text-lg">
+          <p>
+            I partner with early-stage founders, small businesses, and teams who need a reliable
+            builder to turn ideas into working interfaces, websites, and internal tools — without
+            layers of process or a big-agency bill.
+          </p>
+          <p>
+            If you have a product to launch, a site that needs to grow up, or workflows that should
+            be simpler, I help you get from "we should…" to "it's live."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services overview -->
+  <section class="py-24 bg-brutal-cream border-y-3 border-brutal-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-16">
+        <div>
+          <span class="font-mono text-sm uppercase tracking-wider text-brutal-orange mb-2 block">// Engagements</span>
+          <h2 class="text-brutal-headline text-4xl sm:text-5xl">
+            Ways we can<br/>work together
+          </h2>
+        </div>
+        <p class="font-body text-gray-600 max-w-md leading-relaxed">
+          Below are three focused ways I can help this summer. Each engagement is human-led and
+          AI-accelerated — I design the solution, orchestrate the workflows, and keep you in the
+          loop while my AI tools handle a lot of the repetitive work in the background.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {overviewServices.map((service, index) => (
+          <a
+            href={service.anchor}
+            class="card-brutal block p-6 group"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <span class={`w-10 h-10 ${service.bg} border-3 border-brutal-black flex items-center justify-center font-display font-bold text-brutal-white`}>
+                {index + 1}
+              </span>
+              <h3 class={`font-display font-bold text-xl ${service.accent}`}>{service.name}</h3>
+            </div>
+            <p class="font-body text-gray-700 leading-relaxed">
+              {service.summary}
+            </p>
+            <span class="mt-4 inline-block font-mono text-xs uppercase tracking-wider group-hover:text-brutal-orange transition-colors">
+              Learn more →
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Sprint -->
+  <section id="quick-sprint" class="py-24 bg-brutal-white scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-1">
+          <span class="font-mono text-sm uppercase tracking-wider text-brutal-orange mb-2 block">// Engagement 01</span>
+          <h2 class="text-brutal-headline text-3xl sm:text-4xl mb-4">
+            Quick Sprint —<br/>
+            <span class="text-brutal-orange">fast wins</span> for your existing site or product
+          </h2>
+          <p class="font-mono text-sm uppercase tracking-wider text-gray-600">
+            Perfect when you need a reliable dev-designer to jump in, fix things, and ship
+            improvements quickly.
+          </p>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="space-y-4 font-body text-gray-700 leading-relaxed text-lg">
+            <p>
+              Use a Quick Sprint when you already have a site or product, but something needs to
+              be tightened, improved, or shipped — without spinning up a huge project.
+            </p>
+            <p>
+              You get my full attention on one well-defined set of changes, plus AI-assisted help
+              for debugging, refactoring, and checking edge cases so we can move quickly and safely.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-4">What this can include</h3>
+            <ul class="space-y-2 font-body text-gray-700 leading-relaxed">
+              <li class="flex gap-3"><span class="text-brutal-orange font-bold">→</span><span>Landing page or homepage improvements</span></li>
+              <li class="flex gap-3"><span class="text-brutal-orange font-bold">→</span><span>Design refreshes for key screens or flows</span></li>
+              <li class="flex gap-3"><span class="text-brutal-orange font-bold">→</span><span>Frontend bug fixes and UI polish</span></li>
+              <li class="flex gap-3"><span class="text-brutal-orange font-bold">→</span><span>Performance or UX tweaks</span></li>
+              <li class="flex gap-3"><span class="text-brutal-orange font-bold">→</span><span>Small new features or components</span></li>
+              <li class="flex gap-3"><span class="text-brutal-orange font-bold">→</span><span>Copy and layout updates to improve clarity and conversions</span></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-4">What you receive</h3>
+            <p class="font-body text-gray-700 leading-relaxed">
+              A scoped list of changes, implemented in your existing stack, with a short summary
+              of what was done and what to consider next.
+            </p>
+          </div>
+
+          <div class="border-3 border-brutal-black bg-brutal-cream p-6 shadow-brutal-sm">
+            <p class="font-mono text-sm uppercase tracking-wider">
+              <span class="font-bold">Investment:</span> Quick Sprints start at $400 for tightly scoped work.
+            </p>
+          </div>
+
+          <div>
+            <a href={quickSprintHref} class="btn-brutal-primary">
+              Book a Quick Sprint
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Website Build -->
+  <section id="website-build" class="py-24 bg-brutal-cream border-y-3 border-brutal-black scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-1">
+          <span class="font-mono text-sm uppercase tracking-wider text-brutal-violet mb-2 block">// Engagement 02</span>
+          <h2 class="text-brutal-headline text-3xl sm:text-4xl mb-4">
+            Website Build —<br/>
+            a <span class="text-brutal-violet">launch-ready</span> site for your product or business
+          </h2>
+          <p class="font-mono text-sm uppercase tracking-wider text-gray-600">
+            For founders and small teams who need a simple, modern site that feels trustworthy and
+            is easy to update.
+          </p>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="space-y-4 font-body text-gray-700 leading-relaxed text-lg">
+            <p>
+              If you're launching something new or your current site no longer fits where you're
+              going, this is for you. Together we define your goals, content, and structure, then I
+              design and build a site that looks sharp, loads fast, and gives visitors a clear next
+              step.
+            </p>
+            <p>
+              I use AI-assisted research and content drafting to accelerate the early brainstorming
+              and copy passes, then refine everything by hand so the final site still sounds like you.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-4">What's included</h3>
+            <ul class="space-y-2 font-body text-gray-700 leading-relaxed">
+              <li class="flex gap-3"><span class="text-brutal-violet font-bold">→</span><span>Discovery call to clarify goals, audience, and success metrics</span></li>
+              <li class="flex gap-3"><span class="text-brutal-violet font-bold">→</span><span>Site map and content structure for 3–5 core pages</span></li>
+              <li class="flex gap-3"><span class="text-brutal-violet font-bold">→</span><span>Visual design aligned with your brand (or a simple starter system if you don't have one yet)</span></li>
+              <li class="flex gap-3"><span class="text-brutal-violet font-bold">→</span><span>Responsive build for desktop, tablet, and mobile</span></li>
+              <li class="flex gap-3"><span class="text-brutal-violet font-bold">→</span><span>Basic SEO-friendly structure (headings, meta, clean URLs)</span></li>
+              <li class="flex gap-3"><span class="text-brutal-violet font-bold">→</span><span>Contact form or simple lead-capture flow</span></li>
+              <li class="flex gap-3"><span class="text-brutal-violet font-bold">→</span><span>Loom walkthrough so you can edit or hand off your site confidently</span></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-4">What you receive</h3>
+            <p class="font-body text-gray-700 leading-relaxed">
+              A live, production-ready website with clear navigation, thoughtful content, and a
+              maintainable codebase or CMS setup, plus a short guide to keeping it healthy.
+            </p>
+          </div>
+
+          <div class="border-3 border-brutal-black bg-brutal-white p-6 shadow-brutal-sm">
+            <p class="font-mono text-sm uppercase tracking-wider">
+              <span class="font-bold">Investment:</span> Website Builds start at $1,800 for a 3–5 page site, depending on scope and stack.
+            </p>
+          </div>
+
+          <div>
+            <a href={websiteBuildHref} class="btn-brutal-primary">
+              Schedule a Website Build intro call
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research + Build -->
+  <section id="research-build" class="py-24 bg-brutal-white scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-1">
+          <span class="font-mono text-sm uppercase tracking-wider text-brutal-cyan mb-2 block">// Engagement 03</span>
+          <h2 class="text-brutal-headline text-3xl sm:text-4xl mb-4">
+            Research + Build —<br/>
+            when you're not sure <span class="text-brutal-cyan">what to build next</span>
+          </h2>
+          <p class="font-mono text-sm uppercase tracking-wider text-gray-600">
+            For founders and teams who need help thinking and building: research, strategy, and a
+            concrete artifact you can use immediately.
+          </p>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          <div class="space-y-4 font-body text-gray-700 leading-relaxed text-lg">
+            <p>
+              Sometimes the hardest part is deciding what to build, not writing the code. In a
+              Research + Build engagement, I combine AI-assisted research with my own product and
+              engineering experience to help you quickly understand the landscape, then turn that
+              into something real.
+            </p>
+            <p>
+              This is ideal for new product ideas, internal tools, learning platforms, or content
+              systems where you want a thoughtful plan and a working example, not just a slide deck.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-4">What's included</h3>
+            <ul class="space-y-2 font-body text-gray-700 leading-relaxed">
+              <li class="flex gap-3"><span class="text-brutal-cyan font-bold">→</span><span>Clarifying session to define the question or problem</span></li>
+              <li class="flex gap-3"><span class="text-brutal-cyan font-bold">→</span><span>Research into comparable products, patterns, and constraints</span></li>
+              <li class="flex gap-3"><span class="text-brutal-cyan font-bold">→</span><span>A concise written summary with key findings and options</span></li>
+              <li class="flex gap-3"><span class="text-brutal-cyan font-bold">→</span><span>One focused build: a prototype, a key page, or a critical flow</span></li>
+              <li class="flex gap-3"><span class="text-brutal-cyan font-bold">→</span><span>Recommendations for next steps and how to extend the work</span></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-4">What you receive</h3>
+            <p class="font-body text-gray-700 leading-relaxed">
+              A research-backed brief and a working starting point — so you can make a confident
+              call about what to do next, and avoid wasting cycles building the wrong thing.
+            </p>
+          </div>
+
+          <div class="border-3 border-brutal-black bg-brutal-cream p-6 shadow-brutal-sm">
+            <p class="font-mono text-sm uppercase tracking-wider">
+              <span class="font-bold">Investment:</span> Research + Build projects start at $900, depending on depth and deliverables.
+            </p>
+          </div>
+
+          <div>
+            <a href={researchBuildHref} class="btn-brutal-primary">
+              Talk about a Research + Build engagement
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-24 bg-brutal-cream border-y-3 border-brutal-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-16">
+        <div>
+          <span class="font-mono text-sm uppercase tracking-wider text-brutal-violet mb-2 block">// Process</span>
+          <h2 class="text-brutal-headline text-4xl sm:text-5xl">
+            How we'll<br/>work together
+          </h2>
+        </div>
+        <p class="font-body text-gray-600 max-w-md leading-relaxed">
+          I try to keep the process simple and transparent, especially if you're juggling a lot or
+          moving fast. Here's what working together looks like:
+        </p>
+      </div>
+
+      <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        {howItWorksSteps.map((step, index) => (
+          <li class="card-brutal p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="font-display font-bold text-3xl text-brutal-orange">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+            </div>
+            <h3 class="font-display font-bold text-base mb-2 leading-tight">{step.title}</h3>
+            <p class="font-body text-sm text-gray-700 leading-relaxed">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Why work with me -->
+  <section class="py-24 bg-brutal-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="font-mono text-sm uppercase tracking-wider text-brutal-cyan mb-2 block">// Why me</span>
+          <h2 class="text-brutal-headline text-4xl sm:text-5xl mb-6">
+            Why work with me<br/>
+            instead of a generic agency<br/>
+            or just an AI?
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          <div class="space-y-4 font-body text-gray-700 leading-relaxed text-lg">
+            <p>
+              I sit at the intersection of design, engineering, and teaching — which means I care
+              about how things look, how they work, and whether they make sense to humans using them.
+            </p>
+            <p>
+              I use AI tools as part of my process, but not as a replacement for thought. They help
+              me explore more options, spot issues faster, and keep projects moving while you're
+              busy running your business. You still get a single accountable partner, not a black box.
+            </p>
+          </div>
+
+          <ul class="space-y-3">
+            {whyBullets.map((bullet) => (
+              <li class="flex gap-3 border-3 border-brutal-black bg-brutal-cream p-4 shadow-brutal-sm">
+                <span class="text-brutal-orange font-bold">→</span>
+                <span class="font-body text-gray-800 leading-relaxed">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-brutal-cream border-y-3 border-brutal-black">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <span class="font-mono text-sm uppercase tracking-wider text-brutal-orange mb-2 block">// FAQ</span>
+        <h2 class="text-brutal-headline text-4xl sm:text-5xl">
+          Common<br/>questions
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <details class="group card-brutal p-6 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <h3 class="font-display font-bold text-lg sm:text-xl">{faq.q}</h3>
+              <span class="flex-shrink-0 w-8 h-8 border-3 border-brutal-black bg-brutal-white flex items-center justify-center font-display font-bold transition-transform group-open:rotate-45">
+                +
+              </span>
+            </summary>
+            <p class="mt-4 font-body text-gray-700 leading-relaxed">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 bg-brutal-black text-brutal-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="font-mono text-sm uppercase tracking-wider text-brutal-orange mb-4 block">// Let's talk</span>
+      <h2 class="text-brutal-headline text-4xl sm:text-5xl md:text-6xl mb-6">
+        Ready to ship<br/>
+        <span class="text-brutal-orange">something together?</span>
+      </h2>
+      <p class="font-body text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+        If you have a project in mind — or even just a problem you're trying to solve — I'd love to
+        hear about it. Tell me a bit about your product, your timeline, and which package feels
+        closest, and I'll follow up with a simple next step.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href={startProjectHref} class="btn-brutal-primary text-lg px-10 py-4">
+          Start a project
+        </a>
+        <a href={askQuestionHref} class="btn-brutal text-lg px-10 py-4 bg-brutal-white text-brutal-black">
+          Ask a question first
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
