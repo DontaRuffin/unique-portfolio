@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <pattern id="bq-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#C5BFB0" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="#F5F0E8"/>
+  <rect width="1200" height="675" fill="url(#bq-grid)"/>
+
+  <!-- ── QR CODE ── centered around x=248, y=338 -->
+  <!-- Top-left position square -->
+  <rect x="140" y="200" width="84" height="84" fill="#1A1A1A"/>
+  <rect x="154" y="214" width="56" height="56" fill="#F5F0E8"/>
+  <rect x="168" y="228" width="28" height="28" fill="#1A1A1A"/>
+
+  <!-- Top-right position square -->
+  <rect x="292" y="200" width="84" height="84" fill="#1A1A1A"/>
+  <rect x="306" y="214" width="56" height="56" fill="#F5F0E8"/>
+  <rect x="320" y="228" width="28" height="28" fill="#1A1A1A"/>
+
+  <!-- Bottom-left position square -->
+  <rect x="140" y="352" width="84" height="84" fill="#1A1A1A"/>
+  <rect x="154" y="366" width="56" height="56" fill="#F5F0E8"/>
+  <rect x="168" y="380" width="28" height="28" fill="#1A1A1A"/>
+
+  <!-- Timing strips -->
+  <rect x="241" y="256" width="14" height="14" fill="#1A1A1A"/>
+  <rect x="262" y="256" width="14" height="14" fill="#1A1A1A"/>
+  <rect x="200" y="298" width="14" height="14" fill="#1A1A1A"/>
+  <rect x="200" y="326" width="14" height="14" fill="#1A1A1A"/>
+
+  <!-- Data modules (scattered pattern) -->
+  <g fill="#1A1A1A">
+    <rect x="241" y="200" width="14" height="14"/>
+    <rect x="255" y="214" width="14" height="14"/>
+    <rect x="241" y="228" width="14" height="14"/>
+    <rect x="269" y="214" width="14" height="14"/>
+    <rect x="241" y="270" width="14" height="14"/>
+    <rect x="255" y="284" width="14" height="14"/>
+    <rect x="269" y="270" width="14" height="14"/>
+    <rect x="241" y="298" width="14" height="14"/>
+    <rect x="269" y="298" width="14" height="14"/>
+    <rect x="255" y="312" width="14" height="14"/>
+    <rect x="241" y="326" width="14" height="14"/>
+    <rect x="269" y="326" width="14" height="14"/>
+    <rect x="241" y="352" width="14" height="14"/>
+    <rect x="255" y="366" width="14" height="14"/>
+    <rect x="292" y="298" width="14" height="14"/>
+    <rect x="306" y="284" width="14" height="14"/>
+    <rect x="320" y="298" width="14" height="14"/>
+    <rect x="334" y="312" width="14" height="14"/>
+    <rect x="320" y="326" width="14" height="14"/>
+    <rect x="320" y="352" width="14" height="14"/>
+    <rect x="334" y="366" width="14" height="14"/>
+    <rect x="348" y="352" width="14" height="14"/>
+    <rect x="348" y="380" width="14" height="14"/>
+    <rect x="334" y="394" width="14" height="14"/>
+    <rect x="348" y="408" width="14" height="14"/>
+  </g>
+
+  <!-- Orange accent square (overlapping QR top-right area) -->
+  <rect x="314" y="238" width="84" height="84" fill="#E84522" stroke="#1A1A1A" stroke-width="3"/>
+
+  <!-- ── PHONE 1 (large, center) ── -->
+  <!-- Body -->
+  <rect x="466" y="112" width="200" height="420" rx="34" fill="#1A1A1A"/>
+  <!-- Screen -->
+  <rect x="479" y="148" width="174" height="342" rx="8" fill="#7B2FBE"/>
+  <!-- Notch -->
+  <rect x="535" y="106" width="80" height="28" rx="14" fill="#1A1A1A"/>
+  <!-- Home indicator bar -->
+  <rect x="531" y="510" width="68" height="5" rx="2.5" fill="#F5F0E8" opacity="0.45"/>
+
+  <!-- ── PHONE 2 (smaller, right, outline style) ── -->
+  <!-- Body -->
+  <rect x="678" y="172" width="160" height="320" rx="28" fill="#F5F0E8" stroke="#1A1A1A" stroke-width="4"/>
+  <!-- Screen -->
+  <rect x="691" y="205" width="134" height="258" rx="6" fill="#7B2FBE" opacity="0.6"/>
+  <!-- White chip cutting into bottom-right of screen (app UI element) -->
+  <rect x="744" y="360" width="95" height="115" fill="#F5F0E8"/>
+  <!-- Notch -->
+  <rect x="730" y="166" width="58" height="20" rx="10" fill="#1A1A1A"/>
+
+  <!-- ── PLUS SYMBOLS (corners) ── -->
+  <!-- Bottom-left + -->
+  <line x1="88" y1="572" x2="152" y2="572" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/>
+  <line x1="120" y1="540" x2="120" y2="604" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Bottom-right + -->
+  <line x1="1048" y1="572" x2="1112" y2="572" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/>
+  <line x1="1080" y1="540" x2="1080" y2="604" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/>
+</svg>
