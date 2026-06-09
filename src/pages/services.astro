@@ -64,16 +64,28 @@ const whyBullets = [
 
 const faqs = [
   {
-    q: 'Do you only work with local clients?',
-    a: 'No. Most of my work is remote. I’m based in Pennsylvania but happy to work with clients in different time zones as long as we can align on communication and timelines.',
+    q: "Do you only work with local clients?",
+    a: "No. Most of my work is remote. I’m based in Pennsylvania but happy to work with clients in different time zones as long as we can align on communication and timelines.",
   },
   {
-    q: 'What stacks do you usually work with?',
-    a: 'I’m comfortable across modern web stacks (for example, React/Next, TypeScript, Tailwind, and common backend options), and I can usually work within what you already have if it’s reasonable. If we’re starting from scratch, I’ll recommend a stack that fits your goals and maintenance capacity.',
+    q: "What stacks do you usually work with?",
+    a: "I’m comfortable across modern web stacks (for example, React/Next, TypeScript, Tailwind, and common backend options), and I can usually work within what you already have if it’s reasonable. If we’re starting from scratch, I’ll recommend a stack that fits your goals and maintenance capacity.",
   },
   {
-    q: 'How soon can we start?',
-    a: 'Availability changes throughout the year, but I typically keep room for a small number of focused projects. Reach out with your timeline and I’ll let you know what’s realistic.',
+    q: "How soon can we start?",
+    a: "Availability changes throughout the year, but I typically keep room for a small number of focused projects. Reach out with your timeline and I’ll let you know what’s realistic.",
+  },
+  {
+    q: "Will I own the code when the project is done?",
+    a: "Yes. Everything built for you is yours — full code access, no lock-in. If we use third-party services (hosting, CMS, etc.), I’ll make sure you have your own accounts with full admin access.",
+  },
+  {
+    q: "What if I need changes after launch?",
+    a: "Small refinements during the final review phase are included. For changes after handoff, I offer Quick Sprints — so if something needs adjusting a month later, we can scope it quickly and move.",
+  },
+  {
+    q: "Do you work with non-technical clients?",
+    a: "Yes, and I prefer it when the product vision is strong even if the technical knowledge isn’t. I’ll translate everything into plain language, use Loom for walkthroughs, and make sure you’re never confused about what’s been built or why.",
   },
 ];
 
@@ -442,6 +454,16 @@ const pageDescription =
               </li>
             ))}
           </ul>
+
+          <blockquote class="border-l-4 border-brutal-orange pl-6 mt-4">
+            <p class="font-body text-gray-700 leading-relaxed italic">
+              "QuIDE went from concept to deployed IDE with AI integration in one build
+              cycle — research-first, no wasted motion."
+            </p>
+            <cite class="block mt-2 font-mono text-xs uppercase tracking-wider text-gray-500 not-italic">
+              — Two19 Fellowship, Research + Build case study
+            </cite>
+          </blockquote>
         </div>
       </div>
     </div>
@@ -475,25 +497,90 @@ const pageDescription =
 
   <!-- Final CTA -->
   <section class="py-24 bg-brutal-black text-brutal-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="font-mono text-sm uppercase tracking-wider text-brutal-orange mb-4 block">// Let's talk</span>
-      <h2 class="text-brutal-headline text-4xl sm:text-5xl md:text-6xl mb-6">
-        Ready to ship<br/>
-        <span class="text-brutal-orange">something together?</span>
-      </h2>
-      <p class="font-body text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-        If you have a project in mind — or even just a problem you're trying to solve — I'd love to
-        hear about it. Tell me a bit about your product, your timeline, and which package feels
-        closest, and I'll follow up with a simple next step.
-      </p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href={startProjectHref} class="btn-brutal-primary text-lg px-10 py-4">
-          Start a project
-        </a>
-        <a href={askQuestionHref} class="btn-brutal text-lg px-10 py-4 text-brutal-black">
-          Ask a question first
-        </a>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="font-mono text-sm uppercase tracking-wider text-brutal-orange mb-4 block">// Let's talk</span>
+        <h2 class="text-brutal-headline text-4xl sm:text-5xl md:text-6xl mb-6">
+          Ready to ship<br/>
+          <span class="text-brutal-orange">something together?</span>
+        </h2>
+        <p class="font-body text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          If you have a project in mind — or even just a problem you're trying to solve — I'd love to
+          hear about it. Tell me a bit about your product, your timeline, and which package feels
+          closest, and I'll follow up with a simple next step.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center mb-12">
+          <a href={startProjectHref} class="btn-brutal-primary text-lg px-10 py-4">
+            Start a project
+          </a>
+          <a href={askQuestionHref} class="btn-brutal text-lg px-10 py-4 text-brutal-black">
+            Ask a question first
+          </a>
+        </div>
       </div>
+
+      <!-- Contact Form -->
+      <form
+        action="https://formspree.io/f/xkoabkkz"
+        method="POST"
+        class="space-y-6 border-3 border-brutal-white bg-brutal-black p-8"
+      >
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block font-mono text-xs uppercase tracking-wider text-gray-400 mb-2">Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full bg-brutal-cream text-brutal-black border-3 border-brutal-white px-4 py-3 font-body focus:outline-none focus:border-brutal-orange"
+              placeholder="Your name"
+            />
+          </div>
+          <div>
+            <label for="email" class="block font-mono text-xs uppercase tracking-wider text-gray-400 mb-2">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full bg-brutal-cream text-brutal-black border-3 border-brutal-white px-4 py-3 font-body focus:outline-none focus:border-brutal-orange"
+              placeholder="you@example.com"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="service" class="block font-mono text-xs uppercase tracking-wider text-gray-400 mb-2">Which service?</label>
+          <select
+            id="service"
+            name="service"
+            class="w-full bg-brutal-cream text-brutal-black border-3 border-brutal-white px-4 py-3 font-body focus:outline-none focus:border-brutal-orange"
+          >
+            <option value="">Pick one...</option>
+            <option value="Quick Sprint">Quick Sprint</option>
+            <option value="Website Build">Website Build</option>
+            <option value="Research + Build">Research + Build</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" class="block font-mono text-xs uppercase tracking-wider text-gray-400 mb-2">Tell me about your project *</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="5"
+            class="w-full bg-brutal-cream text-brutal-black border-3 border-brutal-white px-4 py-3 font-body focus:outline-none focus:border-brutal-orange resize-y"
+            placeholder="What are you working on? What's the timeline? What would a win look like?"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-brutal-primary text-lg px-10 py-4 w-full sm:w-auto">
+          Send it →
+        </button>
+      </form>
     </div>
   </section>
 </Layout>
